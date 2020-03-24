@@ -2,7 +2,7 @@ const app               = require('express')();
 const mailer            = require('express-mailer');
 const bodyParser        = require('body-parser');
 
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
