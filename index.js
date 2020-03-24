@@ -2,7 +2,8 @@ const app               = require('express')();
 const mailer            = require('express-mailer');
 const bodyParser        = require('body-parser');
 
-const port = process.env.PORT || 3005;
+
+const port = process.env.PORT || 8086;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -22,11 +23,11 @@ mailer.extend(app, {
   }
 });
 
-app.post('/', (req, res, next) => {
+app.post('/nodemail', (req, res, next) => {
     app.mailer.send('email', {
-      to: 'gleisson.assis@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
-      subject: req.body.subject, // REQUIRED.
-      body: req.body.body // All additional properties are also passed to the template as local variables.
+      to: 'guilherme@criptonomia.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
+      subject: "EVO Trading - Prospecção de clientes", // REQUIRED.
+      body:"Hello world?" // All additional properties are also passed to the template as local variables.
     }, function (err) {
       if (err) {
         // handle error
