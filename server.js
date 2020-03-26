@@ -44,5 +44,5 @@ app.post('/nodemail', function (req, res, next) {
 
 app.listen(8080, function () {
     console.log("port listening");
-    console.log('Server running at http://192.168.0.103:8080/');
+    console.log('Server running at https://nodemailer-criptonomia.netlify.com/8080/');
 });
