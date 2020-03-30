@@ -18,8 +18,8 @@ app.post('/nodemail', function (req, res, next) {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-            user: 'guilherme@criptonomia.com',
-            pass: 'Qsxcft3466-'
+            user: 'info@criptonomia.com',
+            pass: '!InfoCriptonomia20'
         },
         tls: {
             rejectUnauthorized: false
@@ -27,8 +27,8 @@ app.post('/nodemail', function (req, res, next) {
     }));
    
     transporter.sendMail({
-        from: 'guilherme@criptonomia.com',
-        to: "gui.diascampos@outlook.com",
+        from: 'info@criptonomia.com',
+        to: email,
         subject: "EVO Trading - Prospecção de clientes" , 
         text: "",
         html: "Olá, Antônio! <br><br> Tivemos uma intenção na pagina da EVO, segue informações: <br><br>Nome: " + nome +"<br>Email: " + email +"<br>Empresa: " + empresa +"<br>Intenção: " + intencao + "<br><br>Evo.trading"
@@ -41,8 +41,8 @@ app.post('/nodemail', function (req, res, next) {
         res.write("Mail sent successfully");
     });
 });
-// http://192.168.0.103:8080/
+
 app.listen(8080, function () {
     console.log("port listening");
-    console.log('Server running at https://localhost:8080/');
+    console.log('Server running at https://criptonomia-mailer:8080/');
 });
